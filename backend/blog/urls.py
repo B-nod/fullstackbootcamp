@@ -16,7 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app.views import  *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/allcategory/', AllCategory.as_view()),
+    path('api/createcategory/', CreateCategory.as_view()),
+    path('api/updatecategory/<int:pk>/', UpdateDeleteCategory.as_view()),
+    path('api/deletecategory/<int:pk>/', UpdateDeleteCategory.as_view()),
+    path('api/category/<int:pk>/', UpdateDeleteCategory.as_view()),
+    path('api/allblog/', AllBlog.as_view()),
+    path('api/createblog/', CreateBlog.as_view()),
+    path('api/updateblog/<int:pk>/', UpdateDeleteBlog.as_view()),
+    path('api/deleteblog/<int:pk>/', UpdateDeleteBlog.as_view()),
+    path('api/blog/<int:pk>/', UpdateDeleteBlog.as_view()),
 ]
